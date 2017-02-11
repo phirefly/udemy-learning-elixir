@@ -24,4 +24,18 @@ defmodule Cards do
       {:error, _reason} -> "That file doesn't exist" #underscore indicates we acknowledge the need for it but we don't want to use it
     end
   end
+
+  def deal(deck, hand_size) do
+    # returns a tuple
+    Enum.split(deck, hand_size)
+  end
+
+  #creates a deck, shuffles them, and deals them out
+  #Use pipes to call multiple methods
+  #The pipe operator requires that you chain methods that have consistent first arguments
+  def create_hand(hand_size) do
+    Cards.create_deck
+    |> Cards.shuffle
+    |> Cards.deal(hand_size)
+  end
 end
