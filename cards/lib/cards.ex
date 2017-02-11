@@ -17,4 +17,11 @@ defmodule Cards do
   def contains?(deck, card) do
     Enum.member?(deck, card)
   end
+
+  def load(filename) do
+    case File.read(filename) do
+      {:ok, binary} -> :erlang.binary_to_term binary
+      {:error, _reason} -> "That file doesn't exist" #underscore indicates we acknowledge the need for it but we don't want to use it
+    end
+  end
 end
