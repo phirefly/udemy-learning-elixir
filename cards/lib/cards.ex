@@ -3,6 +3,9 @@ defmodule Cards do
     Create and handle a deck of cards
   """
 
+  @doc """
+    Returns a list of strings that represent a deck of playing cards
+  """
   def create_deck do
     values = ["Ace", "two", "three", "four", "five", "six", "seven", "eight", "nine", "Jack", "Queen", "King"]
     suits = ["Clubs", "Spades", "Hearts", "Diamonds"]
